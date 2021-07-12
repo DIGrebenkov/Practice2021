@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://testStartButton-v1-1.png" type="Texture" id=1]
+[ext_resource path="res://NewGame.gd" type="Script" id=15]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Node" type="Node"]
+script = ExtResource( 15 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 256.0
+margin_bottom = 144.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Panel"]
+position = Vector2( 128, 72 )
+frames = SubResource( 1 )
+speed_scale = 0.0
+
+[node name="Button" type="Button" parent="Panel/AnimatedSprite"]
+show_behind_parent = true
+margin_left = -128.0
+margin_top = -72.0
+margin_right = 128.0
+margin_bottom = 72.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 128, 72 )
+current = true
+zoom = Vector2( 0.32, 0.32 )
+
+[connection signal="pressed" from="Panel/AnimatedSprite/Button" to="." method="_on_Button_pressed"]

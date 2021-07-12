@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Field.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Wizzard.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Enemy1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Level1.gd" type="Script" id=4]
+[ext_resource path="res://BottleOfWater.tscn" type="PackedScene" id=5]
+
+[node name="Node" type="Node"]
+script = ExtResource( 4 )
+
+[node name="FieldNode" parent="." instance=ExtResource( 1 )]
+
+[node name="BottleOfWater" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1974.47, -705.942 )
+
+[node name="Node2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1302.37, -356.708 )
+
+[node name="WizzardNode" parent="." instance=ExtResource( 2 )]
+position = Vector2( 402.117, -865.507 )

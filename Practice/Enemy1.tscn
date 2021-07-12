@@ -1,0 +1,227 @@
+[gd_scene load_steps=24 format=2]
+
+[ext_resource path="res://testEnemy1-v1-1.png" type="Texture" id=1]
+[ext_resource path="res://testEnemy1-v1-2.png" type="Texture" id=2]
+[ext_resource path="res://KinematicBody2D.gd" type="Script" id=3]
+[ext_resource path="res://testEnemy1-Attack-v1-2.png" type="Texture" id=4]
+[ext_resource path="res://testPlayerHPBar-v1-1.png" type="Texture" id=5]
+[ext_resource path="res://testEnemy1-Attack-v1-1.png" type="Texture" id=6]
+[ext_resource path="res://testEnemy1-Attack-v2-1.png" type="Texture" id=7]
+[ext_resource path="res://testEnemy1-Attack-v2-3.png" type="Texture" id=8]
+[ext_resource path="res://testPlayerHPBar-v2-1.png" type="Texture" id=9]
+[ext_resource path="res://testPlayerHPBar-v2-2.png" type="Texture" id=10]
+[ext_resource path="res://E1Hurtbox.gd" type="Script" id=11]
+[ext_resource path="res://testSightArea-v1-1.png" type="Texture" id=12]
+[ext_resource path="res://testSightArea-v1-5.png" type="Texture" id=13]
+[ext_resource path="res://testSightArea-v1-2.png" type="Texture" id=14]
+[ext_resource path="res://testSightArea-v1-6.png" type="Texture" id=15]
+[ext_resource path="res://testSightArea-v1-8.png" type="Texture" id=16]
+[ext_resource path="res://testSightArea-v1-3.png" type="Texture" id=17]
+[ext_resource path="res://testSightArea-v1-7.png" type="Texture" id=18]
+[ext_resource path="res://testSightArea-v1-4.png" type="Texture" id=19]
+[ext_resource path="res://testEnemy1-Ice-v1-1.png" type="Texture" id=20]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "disabled",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "attack",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 384, 256 )
+
+[sub_resource type="TileSet" id=3]
+0/name = "testSightArea-v1-1.png 0"
+0/texture = ExtResource( 12 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "testSightArea-v1-3.png 1"
+1/texture = ExtResource( 17 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 64, 64 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "testSightArea-v1-2.png 2"
+2/texture = ExtResource( 14 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 64, 64 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+3/name = "testSightArea-v1-4.png 3"
+3/texture = ExtResource( 19 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 64, 64 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "testSightArea-v1-5.png 4"
+4/texture = ExtResource( 13 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 0, 64, 64 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "testSightArea-v1-6.png 5"
+5/texture = ExtResource( 15 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 0, 64, 64 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
+6/name = "testSightArea-v1-7.png 6"
+6/texture = ExtResource( 18 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 0, 0, 64, 64 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape_one_way = false
+6/shape_one_way_margin = 0.0
+6/shapes = [  ]
+6/z_index = 0
+7/name = "testSightArea-v1-8.png 7"
+7/texture = ExtResource( 16 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 0, 0, 64, 64 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape_one_way = false
+7/shape_one_way_margin = 0.0
+7/shapes = [  ]
+7/z_index = 0
+
+[node name="Enemy1-" type="Node2D"]
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="." groups=[
+"enemy",
+]]
+collision_mask = 0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="KinematicBody2D"]
+frames = SubResource( 1 )
+animation = "walk"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KinematicBody2D"]
+visible = false
+polygon = PoolVector2Array( 53.1394, 127.349, 53.1394, 120.232, 32.1631, 112.741, 21.3003, 88.3933, 44, 88.75, 43.75, 76.5, 32, 32.75, 59.25, 20.75, 64, 36.25, 67.25, 36.75, 72.25, 28, 72.25, 4.25, 76.25, 4.5, 76.25, -15.75, 72.5, -15.75, 72.5, -27.25, 72.6326, -50.8726, 63.906, -50.8074, 63.9335, -16.6375, 60, -17, 56, -12.75, 32.25, 7.75, 23.5, -7.25, 20, -19.5, 20.5, -27.25, 24, -43.75, 24, -52.25, 24, -71.75, 11.75, -83.75, -12, -83.75, -31.5, -64, -32.25, -37.25, -24.25, -24.25, -27.5002, -12.5342, -60.3322, 57.0585, -60.3322, 75.8597, -52.475, 79.7883, -36.4799, 80.069, -40.6891, 84.2782, -56.4036, 124.406, -56.4036, 128.054 )
+
+[node name="Sight" type="Area2D" parent="KinematicBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/Sight"]
+visible = false
+position = Vector2( 256, 0 )
+shape = SubResource( 2 )
+
+[node name="TileMap" type="TileMap" parent="KinematicBody2D/Sight"]
+position = Vector2( 256, 0 )
+tile_set = SubResource( 3 )
+format = 1
+tile_data = PoolIntArray( -196614, 4, 0, -196613, 0, 0, -196612, 0, 0, -196611, 0, 0, -196610, 0, 0, -196609, 0, 0, -262144, 0, 0, -262143, 0, 0, -262142, 0, 0, -262141, 0, 0, -262140, 0, 0, -262139, 5, 0, -131078, 3, 0, -196603, 1, 0, -65542, 3, 0, -131067, 1, 0, -6, 3, 0, -65531, 1, 0, 65530, 3, 0, 5, 1, 0, 131066, 3, 0, 65541, 1, 0, 196602, 3, 0, 131077, 1, 0, 262138, 7, 0, 262139, 2, 0, 262140, 2, 0, 262141, 2, 0, 262142, 2, 0, 262143, 2, 0, 196608, 2, 0, 196609, 2, 0, 196610, 2, 0, 196611, 2, 0, 196612, 2, 0, 196613, 6, 0 )
+
+[node name="E1Hurtbox" type="Area2D" parent="KinematicBody2D" groups=[
+"hurtbox",
+]]
+script = ExtResource( 11 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KinematicBody2D/E1Hurtbox"]
+visible = false
+polygon = PoolVector2Array( 53.1394, 127.349, 53.1394, 120.232, 32.1631, 112.741, 21.3003, 88.3933, 44, 88.75, 43.75, 76.5, 32, 32.75, 59.25, 20.75, 64, 36.25, 67.25, 36.75, 72.25, 28, 72.25, 4.25, 76.25, 4.5, 76.25, -15.75, 72.5, -15.75, 72.5, -27.25, 80.2323, -27.8671, 84.4416, -31.936, 83.8803, -68.1354, 75.8828, -104.194, 67.8852, -104.194, 56.0994, -88.0591, 47.8212, -68.416, 47.0656, -35.8887, 63.9335, -16.6375, 60, -17, 56, -12.75, 32.25, 7.75, 23.5, -7.25, 20, -19.5, 20.5, -27.25, 24, -43.75, 24, -52.25, 24, -71.75, 11.75, -83.75, -12, -83.75, -31.5, -64, -32.25, -37.25, -24.25, -24.25, -27.5002, -12.5342, -60.3322, 57.0585, -60.3322, 75.8597, -52.475, 79.7883, -36.4799, 80.069, -40.6891, 84.2782, -56.4036, 124.406, -56.4036, 128.054 )
+
+[node name="E1Hitbox" type="Area2D" parent="KinematicBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KinematicBody2D/E1Hitbox"]
+visible = false
+polygon = PoolVector2Array( -75, -130, 75, -130, 130, 0, 130, 130, 40, 130, -75, -70 )
+disabled = true
+
+[node name="PlayersHPBar" type="TextureProgress" parent="KinematicBody2D"]
+margin_left = -60.0
+margin_top = -190.0
+margin_right = 60.0
+margin_bottom = -90.0
+max_value = 10.0
+value = 10.0
+texture_under = ExtResource( 9 )
+texture_over = ExtResource( 5 )
+texture_progress = ExtResource( 10 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="animation_finished" from="KinematicBody2D/AnimatedSprite" to="KinematicBody2D" method="_on_AnimatedSprite_animation_finished"]
+[connection signal="frame_changed" from="KinematicBody2D/AnimatedSprite" to="KinematicBody2D" method="_on_AnimatedSprite_frame_changed"]
+[connection signal="body_entered" from="KinematicBody2D/Sight" to="KinematicBody2D" method="_on_Sight_body_entered"]
+[connection signal="body_exited" from="KinematicBody2D/Sight" to="KinematicBody2D" method="_on_Sight_body_exited"]
+[connection signal="was_damaged" from="KinematicBody2D/E1Hurtbox" to="KinematicBody2D" method="_on_E1Hurtbox_was_damaged"]
+[connection signal="area_entered" from="KinematicBody2D/E1Hitbox" to="KinematicBody2D" method="_on_E1Hitbox_area_entered"]
