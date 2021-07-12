@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://testAttackEffect-v1-2.png" type="Texture" id=1]
+[ext_resource path="res://testAttackEffect-v1-3.png" type="Texture" id=2]
+[ext_resource path="res://testAttackEffect-v1-1.png" type="Texture" id=3]
+[ext_resource path="res://WaterBlade.gd" type="Script" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="BladeArea" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BladeArea"]
+visible = false
+polygon = PoolVector2Array( 0.600685, -0.318291, 0.600685, -18.305, 72.9282, -18.4412, 143.532, -14.2094, 160.014, -9.97766, 184.513, -6.41406, 192.568, -2.23011, 192.779, 5.7584, 164.503, 10.2782, 132.549, 14.0623, 112.263, 14.1674, 40.2547, 14.385, 0.688122, 15.0078 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="BladeArea"]
+position = Vector2( 128.54, 10.081 )
+frames = SubResource( 1 )
+speed_scale = 1.2
+
+[connection signal="area_entered" from="BladeArea" to="." method="_on_BladeArea_area_entered"]
+[connection signal="animation_finished" from="BladeArea/AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
